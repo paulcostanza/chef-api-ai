@@ -4,12 +4,11 @@ export default function Main() {
 
     const [ingredients, setIngredient] = React.useState(["Chicken", "Oregano", "Tomatoes"])
 
-    function handleSubmit(event) {
-        event.preventDefault()
-        const formData = new FormData(event.currentTarget)
+    function addToList(formData) {
         const newIngredient = formData.get("ingredient")
-
         setIngredient(prev => [...prev, newIngredient])
+
+        console.log(formData)
     }
 
     const ingredientsListItems = ingredients.map(ingredient => (
@@ -18,7 +17,7 @@ export default function Main() {
 
     return (
         <>
-            <form onSubmit={handleSubmit} className="add-ingredient-form">
+            <form action={addToList} className="add-ingredient-form">
                 <input
                     aria-label="Add ingredient"
                     type="text"
