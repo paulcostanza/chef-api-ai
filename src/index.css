@@ -96,6 +96,8 @@ ul.ingredients-list {
   border-radius: 8px;
   background: #f0efeb;
   padding: 10px 12px;
+  width: 90%;
+  margin: auto;
 }
 
 .get-recipe-container h3 {
